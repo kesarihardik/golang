@@ -6,7 +6,8 @@ import (
 	"math"
 )
 
-// syntax:  func name return-type
+// if params are of same type, we can define type once
+// in go functions can return multiple values
 func divide(numerator, denominator int) (int, int, error) {
 	if denominator == 0 {
 		return 0, 0, errors.New("denominator can not be zero")
