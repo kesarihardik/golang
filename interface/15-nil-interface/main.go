@@ -2,9 +2,8 @@ package main
 
 import "fmt"
 
-//nil interface - concrete value inside interface itself is nil.
+//nil interface - no concrete value and no concrete type.
 //If the concrete value inside the interface itself is nil, the method will be called with a nil receiver.
-//nil interface itself is not nil
 
 type I interface {
 	M()

@@ -13,7 +13,6 @@ func main() {
 
 	// They don't store data. They are a reference.
 	//slices are referrence to array. they modify original array
-
 	vowelSlice[0] = 'b'
 	fmt.Printf("%c", vowels[0])
 
@@ -22,13 +21,13 @@ func main() {
 	fmt.Printf("\n%T", v)
 
 	a := make([]int, 5, 6) //slice                make(type,length, capacity)
+	a = a[:3]              //reslice - set length 3 [0,3)
 	printSlice(a)
 
 	//nil slice
 	var s []int
 	printSlice(s)
-
-	s = append(s, 1, 2, 3)
+	s = append(s, 1, 2, 3) //automatically allocates bigger array in case array is full.
 	printSlice(s)
 }
 

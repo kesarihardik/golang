@@ -32,7 +32,7 @@ func divide(numerator, denominator int) (int, int, error) {
 
 func sum(a ...int) int { //variadic functions
 	s := 0
-	for _, v := range a {
+	for v := range a {
 		s += v
 	}
 	return s
@@ -46,7 +46,7 @@ func main() {
 	fmt.Println(divide(5, 0))
 	fmt.Println(sum(11, 2, 45, 3))
 
-	//functions can be used as parameters and passed around
+	//functions can be used as parameters and passed around.
 	hypot := func(x, y float64) float64 { //anonymous function/ function literal assigned to hypot
 		return math.Sqrt(x*x + y*y)
 	}
