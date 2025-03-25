@@ -15,9 +15,16 @@ func adder() func(int) int {
 }
 
 func main() {
+	counter := 0
+
+	func() {
+		counter += 10 //counter is accessed by anonymous function
+	}()
+	fmt.Print(counter, "\n")
+
 	pos := adder()
 	fmt.Printf("%T\n", pos)
-	for i := 0; i < 10; i++ {
+	for i := range 10 {
 		fmt.Println(pos(i))
 	}
 }

@@ -24,4 +24,5 @@ func main() {
 	head := NewNode(1)
 	head.next = NewNode(2)
 	head.next.next = NewNode(3)
+	PrintList(head)
 }
