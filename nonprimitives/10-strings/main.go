@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 	"unicode/utf8"
 )
 
@@ -17,13 +19,33 @@ func main() {
 	}
 
 	/* string is read only slice of bytes.
-	bytes(1 byte) can handle ASCII(1 byte/UTF-8) but can't handle unicode(UTF-32)
+	bytes(1 byte) can handle ASCII(1 byte/UTF-8) but can't handle unicode(UTF-32).
+	by default go reads string using rune.
 	*/
 	fmt.Print("\n")
 	var s = []byte("Hey there! 😃") //change to rune to read Unicode points correctly
 	for i, v := range s {
-		fmt.Printf("\nindex - %d , character = %c, Unicode = %U", i, v, v)
+		fmt.Printf("\nindex - %d , character = %c, Unicode = %U\n", i, v, v)
 	}
+
+	//package strings
+	// fmt.Println(strings.ToLower(s1))
+	// fmt.Println(strings.HasPrefix("abc", "t"))
+	// fmt.Println(strings.Trim("!!hello!!", "!"))
+	// fmt.Println(strings.TrimSpace("  abcd  "))
+	// fmt.Println(strings.Contains(s1, "ell"))
+	// fmt.Println(strings.Index(s1, "l"))
+	// fmt.Println(strings.Replace("Hello there", "there", "hi", 1))
+	// fmt.Println(strings.Count(s1, "l"))
+
+	fmt.Println(strconv.Itoa(123))
+	if i, err := strconv.Atoi("123"); err == nil {
+		fmt.Println(i)
+	}
+
+	w := strings.Fields(s1) //strings.Split(s1," ")
+	fmt.Println(w)
+	fmt.Println(strings.Join(w, ","))
 
 	// var strSlice = []string{"s", "t", "r"}
 	// var strBuilder strings.Builder

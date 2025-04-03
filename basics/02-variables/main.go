@@ -6,7 +6,7 @@ import "fmt"
 var a int16 = 343
 
 const (
-	x1 = 12 //untype constants
+	x1 = 12 //untype constants - leads to type flexibility. high precision arithmetic, avoids overflow error,
 	y1 = 23
 )
 

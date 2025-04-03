@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	var i interface{} = 42
+	var i any = 42 //var i interface{} = 42
 
 	switch v := i.(type) {
 	case int:
